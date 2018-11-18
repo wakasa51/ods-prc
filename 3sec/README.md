@@ -1,5 +1,6 @@
 ### 3-1 SLList において、push(x)、pop()、add(x)、remove() の特殊なケースすべて をダミーノードを使って避けられないのはなぜか。
 pop：最後の要素を削除する場合は特別で、tailをNULLに設定する。
+
 →要素数が0の時にdummyのtailにnullを設定する必要がある。
 add：n=0の場合は特別でtail=head=nullとする。この場合、tailもheadもuになる。
 →n=0の場合、dummyのtailとheadにnullを入れる必要がある。
