@@ -13,8 +13,7 @@ private:
   int j;
   int n;
 public:
-  ArrayQueue(int length) : j(0), n(0), a(length) {
-  }
+  ArrayDeque(int length) : j(0), n(0), a(length) { }
 
   T get(int i) {
     return a[(j + i) % a.length];
