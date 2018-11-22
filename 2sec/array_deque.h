@@ -15,6 +15,10 @@ private:
 public:
   ArrayDeque(int length) : j(0), n(0), a(length) { }
 
+  int size() {
+    return n;
+  }
+
   T get(int i) {
     return a[(j + i) % a.length];
   }

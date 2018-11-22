@@ -16,6 +16,10 @@ class SEList {
     void add(int i, T x) {
       ArrayDeque<T>::add(i, x);
     }
+    bool add(T x) {
+      add(ArrayDeque<T>::size(), x);
+      return true;
+    }
     void resize() {}
   };
 
@@ -45,6 +49,10 @@ public:
   SEList(int b) : n(0), b(b), dummy(0) {
     dummy.prev = &dummy;
     dummy.next = &dummy;
+  }
+
+  int size() {
+    return n;
   }
 
   void getLocation(int i, Location &ell) {
@@ -159,6 +167,16 @@ public:
       w = w->next;
     }
     remove(w);
+  }
+
+  Node* addBefore(Node *w) {
+    Node *u = new Node(b);
+    u->prev = w->prev;
+    u->next = w;
+    w->prev = u;
+    u->prev->next = u;
+    n++;
+    return u;
   }
 };
 
